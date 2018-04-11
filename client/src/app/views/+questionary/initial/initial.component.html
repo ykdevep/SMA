@@ -1,0 +1,153 @@
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="0" fxLayoutGap.xs="0">
+    <div class="item" fxFlex="90%" fxFlex.gt-sm="90%">
+        <div [hidden]="flag">
+            <mat-toolbar color="primary">
+                <h2>Evaluación Neuropsicológica (NEUROPSI)</h2>
+            </mat-toolbar>
+            <mat-card>
+                <div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center center" fxLayoutGap="0" fxLayoutGap.xs="0">
+                    <div class="item" fxFlex="100%" fxFlex.xs="100%" fxFlex.gt-sm="100%">
+
+                        <mat-vertical-stepper [linear]="true">
+
+                            <mat-step [stepControl]="generalDataForm">
+                                <ng-template matStepLabel>Datos Generales y Antecedentes Médicos</ng-template>
+
+                                <general-data [generalDataForm]="generalDataForm" [user]="user" [age]="age" (save)="saveGeneralData($event)"></general-data>
+                                
+                                
+                            </mat-step>
+                            <mat-step [stepControl]="orientationForm">
+                                <ng-template matStepLabel>Orientación</ng-template>
+
+                                <orientation [orientationForm]="orientationForm" [age]="age" (save)="saveOrientation($event)"></orientation>
+                                
+                            </mat-step>
+                            <mat-step [stepControl]="regressionDigitsForm">
+                                <ng-template matStepLabel>Atención y Concentración. (Dígitos en regresión)</ng-template>
+
+                                <reggresion-digits [regressionDigitsForm]="regressionDigitsForm" (save)="saveReggresionDigits($event)"></reggresion-digits>
+                                
+                            </mat-step>
+                            <mat-step [stepControl]="detentionVisualForm">
+                                <ng-template matStepLabel>Atención y Concentración. (Detención Visual)</ng-template>
+
+                                <detention-visual [detentionVisualForm]="detentionVisualForm" (save)="saveDetentionVisual($event)"></detention-visual>
+                                
+                            </mat-step>
+                            <mat-step [stepControl]="digitsForm">
+                                <ng-template matStepLabel>Atención y Concentración. (20-3)</ng-template>
+    
+                                <digits [digitsForm]="digitsForm" (save)="saveDigits($event)"></digits>
+                                
+                            </mat-step>
+
+                            <mat-step [stepControl]="verbalMemoryForm">                            
+                                <ng-template matStepLabel>Codificación (Memoria Verbal)</ng-template>
+
+                                <verbal-memory [verbalMemoryForm]="verbalMemoryForm" (save)="verbalMemory($event)"></verbal-memory>    
+                                
+                            </mat-step>
+
+                            <mat-step>
+                                <ng-template matStepLabel>Lenguaje</ng-template>
+
+                                <language></language>
+                                
+                            </mat-step>
+
+                            <mat-step>
+                                <ng-template matStepLabel>Funciones Ejecutivas</ng-template>
+                                <executive-function></executive-function>
+                                
+                            </mat-step>
+
+                            <mat-step>
+                                <ng-template matStepLabel>Funciones Evocación</ng-template>
+
+                                <evocation-function></evocation-function>
+                                
+                            </mat-step>
+
+                            <mat-step>
+                                <ng-template matStepLabel>Sugerencia</ng-template>
+
+                                <h2>Usted a terminado el cuestionario Inicial. Para hacer permanentes los cambios presione el boton Guardar cuestionario</h2>
+
+                                <button mat-button (click)="save()">Guardar Cuestionario</button>
+                            </mat-step>
+                        </mat-vertical-stepper>                    
+
+                    </div>
+                </div>
+            </mat-card>
+
+        </div>
+
+        <br />
+        <div [hidden]="!flag">
+
+            <h2>Usted ya ha realizado el Diagnóstico Inicial</h2>
+
+
+            <div [ngSwitch]="level.toString()">
+
+                <h3 *ngSwitchCase="0">
+                    Se le recomienda realizar ejercicios de atención enfocada en nivel inicial
+                </h3>
+                <h3 *ngSwitchCase="1">
+                    Se le recomienda realizar ejercicios de atención enfocada en nivel inicial
+                </h3>
+                <h3 *ngSwitchCase="2">
+                    Se le recomienda realizar ejercicios de atención enfocada en nivel medio
+                </h3>
+                <h3 *ngSwitchCase="3">
+                    Se le recomienda realizar ejercicios de atención enfocada en nivel avanzado
+                </h3>
+                <h3 *ngSwitchCase="4">
+                    Se le recomienda realizar ejercicios de atención sostenida en nivel inicial
+                </h3>
+                <h3 *ngSwitchCase="5">
+                    Se le recomienda realizar ejercicios de atención sostenida en nivel medio
+                </h3>
+                <h3 *ngSwitchCase="6">
+                    Se le recomienda realizar ejercicios de atención sostenida en nivel avanzado
+                </h3>
+                <h3 *ngSwitchCase="7">
+                    Se le recomienda realizar ejercicios de atención selectiva en nivel inicial
+                </h3>
+                <h3 *ngSwitchCase="8">
+                    Se le recomienda realizar ejercicios de atención selectiva en nivel medio
+                </h3>
+                <h3 *ngSwitchCase="9">
+                    Se le recomienda realizar ejercicios de atención selectiva en nivel avanzado
+                </h3>
+                <h3 *ngSwitchCase="10">
+                    Se le recomienda realizar ejercicios de atención alternada en nivel inicial
+                </h3>
+                <h3 *ngSwitchCase="11">
+                    Se le recomienda realizar ejercicios de atención alternada en nivel medio
+                </h3>
+                <h3 *ngSwitchCase="12">
+                    Se le recomienda realizar ejercicios de atención alternada en nivel avanzado
+                </h3>
+                <h3 *ngSwitchCase="13">
+                    Se le recomienda realizar ejercicios de atención dividida en nivel inicial
+                </h3>
+                <h3 *ngSwitchCase="14">
+                    Se le recomienda realizar ejercicios de atención dividida en nivel medio
+                </h3>
+                <h3 *ngSwitchCase="15">
+                    Se le recomienda realizar ejercicios de atención dividida en nivel avanzado
+                </h3>
+            </div>
+
+            <button mat-raised-button [disabled]="showChart"  (click)="showChart = !showChart"><mat-icon>show_chart</mat-icon> Mostrar Gráfica</button>
+
+            <hr />
+
+            <chart-initial-questionary *ngIf="showChart" [totalPoints]="totalPoints" [totalErrors]="totalErrors" [totalHits]="totalHits" [totalOmits]="totalOmits" [totalHowlers]="totalHowlers"></chart-initial-questionary>
+            
+        </div>
+    </div>
+</div>

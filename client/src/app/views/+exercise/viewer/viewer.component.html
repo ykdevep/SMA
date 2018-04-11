@@ -1,0 +1,40 @@
+<div class="container" fxLayout="row" fxLayout.xs="row" fxLayoutAlign="center center" fxLayoutGap="0" fxLayoutGap.xs="0">
+    <div class="item" fxFlex="90%">
+
+        <mat-card class="card">
+            <mat-card-header >
+                <mat-card-title>
+                    <h3 *ngIf="exercise">Atención {{exercise.attention.name}}</h3>
+                </mat-card-title>
+            </mat-card-header>
+            <hr />
+            <mat-card-content>
+                
+                <div *ngIf="exercise" [ngSwitch]="exercise.attention.index">
+                    
+                    <directional [exercise]="exercise" *ngSwitchCase="0"></directional>
+                    <number-size [exercise]="exercise" *ngSwitchCase="1"></number-size>
+                    <arrow-tracking [exercise]="exercise" *ngSwitchCase="2"></arrow-tracking>
+
+                    <h1 *ngSwitchDefault>Creando ejercicio...</h1>
+                </div>
+
+                <div *ngIf="!exercise">
+                    <h1>Ejercicio no encontrado</h1>
+                </div>                
+            </mat-card-content>
+            <hr />
+            <mat-card-actions>
+                <button mat-raised-button (click)="saveAndClose()" aria-label="close">
+                    Guardar y Cerrar
+                </button>                
+            </mat-card-actions>
+        </mat-card>
+        <div class="loading">
+            <div [hidden]="!loading">
+                <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+            </div>
+        </div>
+        <br />
+    </div>
+</div>
