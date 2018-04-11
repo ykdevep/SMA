@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
       <div class="item" fxFlex="80%">
         <h1>Acerca del Proyecto</h1>
 
-        <h2>Una explicación aqui con una imagen inicial.</h2>
+        <h2>Una explicación aqui con una imagen inicial de algo.</h2>
+        <h2>Agregar contenido de atención y concentración.</h2>
         
       </div>
     </div>
