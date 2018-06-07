@@ -24,7 +24,7 @@ import { Component, OnInit } from '@angular/core';
           <mat-tab label="Sostenida">
             <mat-grid-list cols="5" rowHeight="2:1">
 
-              <mat-grid-tile><a mat-menu-item >Rastreo Flechas</a></mat-grid-tile>
+              <mat-grid-tile><a mat-menu-item >Rastreo de flechas</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="primary"  [routerLink]="['/exercise', {'attention': 2, 'exercise': 1,'dificulty': 0}]">Inicial</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="accent"  [routerLink]="['/exercise', {'attention': 2, 'exercise': 1, 'dificulty': 1}]">Media</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="warn"  [routerLink]="['/exercise', {'attention': 2, 'exercise': 1, 'dificulty': 2}]">Avanzada</a></mat-grid-tile>
@@ -36,25 +36,25 @@ import { Component, OnInit } from '@angular/core';
           <mat-tab label="Enfocada">
             <mat-grid-list cols="5" rowHeight="2:1">
 
-              <mat-grid-tile><a mat-menu-item >Direccionalidad Derecha</a></mat-grid-tile>
+              <mat-grid-tile><a mat-menu-item >Direccionalidad derecha</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="primary"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  0, 'dificulty': 0}]">Inicial</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="accent"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  0, 'dificulty': 1}]">Media</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="warn"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  0, 'dificulty': 2}]">Avanzada</a></mat-grid-tile>
               <mat-grid-tile><a mat-button [routerLink]="['/exercise', {'attention': 1,  'exercise':  0, 'dificulty': 3}]">Aleatoria</a></mat-grid-tile>
 
-              <mat-grid-tile><a mat-menu-item >Direccionalidad Izquierda</a></mat-grid-tile>
+              <mat-grid-tile><a mat-menu-item >Direccionalidad izquierda</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="primary"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  1, 'dificulty': 0}]">Inicial</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="accent"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  1, 'dificulty': 1}]">Media</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="warn" [routerLink]="['/exercise', {'attention': 1,  'exercise':  1, 'dificulty': 2}]">Avanzada</a></mat-grid-tile>
               <mat-grid-tile><a mat-button [routerLink]="['/exercise', {'attention': 1,  'exercise': 1, 'dificulty': 3}]">Aleatoria</a></mat-grid-tile>
 
-              <mat-grid-tile><a mat-menu-item >Direccionalidad Arriba</a></mat-grid-tile>
+              <mat-grid-tile><a mat-menu-item >Direccionalidad arriba</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="primary" [routerLink]="['/exercise', {'attention': 1,  'exercise':  2, 'dificulty': 0}]">Inicial</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="accent"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  3, 'dificulty': 1}]">Media</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="warn"   [routerLink]="['/exercise', {'attention': 1,  'exercise':  2, 'dificulty': 2}]">Avanzada</a></mat-grid-tile>
               <mat-grid-tile><a mat-button [routerLink]="['/exercise', {'attention': 1,  'exercise':  2, 'dificulty': 3}]">Aleatoria</a></mat-grid-tile>
 
-              <mat-grid-tile><a mat-menu-item >Direccionalidad Abajo</a></mat-grid-tile>
+              <mat-grid-tile><a mat-menu-item >Direccionalidad abajo</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="primary"  [routerLink]="['/exercise', {'attention': 1,  'exercise':  3, 'dificulty': 0}]">Inicial</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="accent" [routerLink]="['/exercise', {'attention': 1,  'exercise':  3, 'dificulty': 1}]">Media</a></mat-grid-tile>
               <mat-grid-tile><a mat-button color="warn" [routerLink]="['/exercise', {'attention': 1,  'exercise':  3, 'dificulty': 2}]">Avanzada</a></mat-grid-tile>

@@ -32,7 +32,7 @@ import { currentUser } from '@app/core/types/user/queries.ts'
           </mat-form-field>
 
           <mat-form-field class="full-width">
-            <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" formControlName="birthdate">
+            <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" formControlName="birthdate">
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker startView="year"></mat-datepicker>
           </mat-form-field>

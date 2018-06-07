@@ -103,7 +103,7 @@ export class LoginComponent implements OnInit {
       },
     }).subscribe(({data}) => {
       this.loading = data.loading;
-      this.snackBar.open(`Bienvenido a SEMEAT`, 'X', {duration: 3000});
+      this.snackBar.open(`Bienvenido al Sistema de Medición de la Atención (SMA)`, 'X', {duration: 3000});
       this.authService.login(data.signinUser.token);
       
       if (this.authService.isStudent()) {

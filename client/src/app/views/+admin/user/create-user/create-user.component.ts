@@ -145,7 +145,7 @@ export class CreateUserComponent implements OnInit {
     }).subscribe(({data}) => {
       this.loading = data.loading;
       this.addUserForm.reset();
-      this.snackBar.open(`Usuario ${data.addUser.firstname} adicionado correctamente!`, 'X', {duration: 3000});      
+      this.snackBar.open(`Usuario ${data.addUser.firstname} Adicionado correctamente!`, 'X', {duration: 3000});      
       
     }, (error) => {
       this.loading = false;

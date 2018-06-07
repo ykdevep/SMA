@@ -32,7 +32,7 @@ import { signupUser } from '@app/core/types/user/mutations.ts'
               </mat-form-field>
 
               <mat-form-field class="full-width">
-                <input matInput [matDatepicker]="picker" placeholder="Fecha de nacimiento" formControlName="birthdate">
+                <input matInput [matDatepicker]="picker" placeholder="Fecha de Nacimiento" formControlName="birthdate">
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker startView="year"></mat-datepicker>
               </mat-form-field>
@@ -47,7 +47,7 @@ import { signupUser } from '@app/core/types/user/mutations.ts'
 
               <div *ngIf="signupForm.value.password != signupForm.value.repeat_password">
                 <div class="warn">                  
-                  <h4>Las contraseñas no coinciden, la misma debe poseer letras y números y un mínimo de 6 carácteres</h4>                  
+                  <h4>Las contraseñas no coinciden, la misma debe poseer letras y números y un mínimo de 6 caracteres</h4>                  
                 </div>
               </div>
 
@@ -119,7 +119,7 @@ export class SignupComponent implements OnInit {
       }
     }).subscribe(({data}) => {
       this.loading = data.loading;
-      this.snackBar.open(`Bienvenido a SEMEAT`, 'X', {duration: 3000});
+      this.snackBar.open(`Bienvenido al Sistema de Medición de la Atención (SMA)`, 'X', {duration: 3000});
       this.authService.singup(data.signupUser.token);
       
       if (this.authService.isStudent()) {

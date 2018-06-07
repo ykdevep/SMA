@@ -67,7 +67,7 @@ const exercises = gql`
           </mat-tab>
           <mat-tab label="Sostenida">
             <div *ngIf="exerciseSostenida.length > 0">
-              <h2 mat-menu-item >Rastreo Flechas</h2>
+              <h2 mat-menu-item >Rastreo de flechas</h2>
               
               <mat-grid-list cols="8" rowHeight="2:1">  
                 <mat-grid-tile>Fecha</mat-grid-tile>
